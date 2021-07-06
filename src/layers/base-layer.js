@@ -873,7 +873,7 @@ class Layer {
     const dataUpdateTriggers = this.getDataUpdateTriggers(layerDataset);
     const triggerChanged = this.getChangedTriggers(dataUpdateTriggers);
 
-    if (triggerChanged.getMeta) {
+    if (triggerChanged.getMeta || triggerChanged.getData) {
       this.updateLayerMeta(allData, getPosition);
     }
 
