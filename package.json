@@ -1,7 +1,7 @@
 {
-  "name": "kepler.gl",
+  "name": "@dekart-xyz/kepler.gl",
   "author": "Shan He <shan@uber.com>",
-  "version": "2.5.1",
+  "version": "2.5.1-fix.0",
   "description": "kepler.gl is a webgl based application to visualize large scale location data in the browser",
   "license": "MIT",
   "main": "dist/index.js",
@@ -15,7 +15,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/keplergl/kepler.gl.git"
+    "url": "https://github.com/dekart-xyz/kepler.gl.git"
   },
   "scripts": {
     "install:example": "cd examples/demo-app && yarn",
@@ -46,7 +46,7 @@
     "analyze:bundle": "webpack --config ./webpack/bundle.js --progress --env.prod",
     "check-licence": "uber-licence --dry",
     "add-licence": "uber-licence",
-    "prepublish": "uber-licence && yarn build && yarn build:umd",
+    "manual-prepublish": "uber-licence && yarn build && yarn build:umd",
     "docs": "babel-node ./scripts/documentation.js",
     "typedoc": "typedoc --theme markdown --out typedoc --inputFiles ./src/reducers --inputFiles ./src/actions --excludeExternals --excludeNotExported --excludePrivate",
     "example-version": "babel-node ./scripts/edit-version.js",
