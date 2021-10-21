@@ -32,9 +32,13 @@ import {parseGeoJsonRawFeature, getGeojsonFeatureTypes} from 'layers/geojson-lay
 export function coordHasLength4(samples) {
   let hasLength4 = true;
   for (let i = 0; i < samples.length; i += 1) {
-    hasLength4 = !samples[i].geometry.coordinates.find(c => c.length < 4);
-    if (!hasLength4) {
-      break;
+    if (samples[i].geometry.coordinates) {
+      hasLength4 = !samples[i].geometry.coordinates.find(c => c.length < 4);
+      if (!hasLength4) {
+        break;
+      }
+    } else {
+      return false;
     }
   }
   return hasLength4;
