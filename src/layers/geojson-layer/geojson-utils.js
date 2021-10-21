@@ -75,10 +75,8 @@ export function getGeojsonDataMaps(allData, getFeature) {
 
     if (feature && feature.geometry && acceptableTypes.includes(feature.geometry.type)) {
       // store index of the data in feature properties
-      feature.properties = {
-        ...(feature.properties || {}),
-        index
-      };
+      feature.properties = Object.assign({}, feature.properties || {})
+      feature.properties.index = index;
 
       dataToFeature[index] = feature;
     } else {
@@ -96,24 +94,19 @@ export function getGeojsonDataMaps(allData, getFeature) {
  */
 export function parseGeometryFromString(geoString) {
   let parsedGeo;
-
-  // try parse as geojson string
-  // {"type":"Polygon","coordinates":[[[-74.158491,40.83594]]]}
-  try {
-    parsedGeo = JSON.parse(geoString);
-  } catch (e) {
-    // keep trying to parse
-  }
-
-  // try parse as wkt
-  if (!parsedGeo) {
+  if (geoString.length && geoString[0] === '{') {
+    try {
+      parsedGeo = JSON.parse(geoString);
+    } catch (e) {
+      return null;
+    }
+  } else {
     try {
       parsedGeo = wktParser(geoString);
     } catch (e) {
       return null;
     }
   }
-
   if (!parsedGeo) {
     return null;
   }
