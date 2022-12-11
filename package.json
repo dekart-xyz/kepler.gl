@@ -1,8 +1,8 @@
 {
-  "name": "kepler.gl",
+  "name": "@dekart-xyz/kepler.gl",
   "author": "Shan He <shan@uber.com>",
-  "version": "2.5.5",
-  "description": "kepler.gl is a webgl based application to visualize large scale location data in the browser",
+  "version": "2.5.5-fix.0",
+  "description": "Fork of kepler.gl with performance improvements used in dekart.xyz ",
   "license": "MIT",
   "main": "dist/index.js",
   "keywords": [
