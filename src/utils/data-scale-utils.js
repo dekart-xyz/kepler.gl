@@ -26,6 +26,7 @@ import {extent} from 'd3-array';
  * @type {typeof import('./data-scale-utils').getQuantileDomain}
  */
 export function getQuantileDomain(data, valueAccessor, sortFunc) {
+  console.log('getQuantileDomain', data)
   const values = typeof valueAccessor === 'function' ? data.map(valueAccessor) : data;
 
   return values.filter(notNullorUndefined).sort(sortFunc);

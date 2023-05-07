@@ -316,7 +316,7 @@ class KeplerTable {
       Console.error(`scale type ${scaleType} not supported`);
       return null;
     }
-
+    console.log('getColumnLayerDomain field', field)
     const {valueAccessor} = field;
     const indexValueAccessor = i => valueAccessor({index: i});
     const sortFunction = getSortingFunction(field.type);

@@ -68,6 +68,9 @@ export class RowDataContainer {
     if (this._rows[rowIndex] === null) {
       return null;
     }
+    if (this._rows[rowIndex] === undefined) {
+      console.log(rowIndex, columnIndex, this._rows.length)
+    }
     return this._rows[rowIndex][columnIndex];
   }
 

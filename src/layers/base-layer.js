@@ -897,9 +897,11 @@ class Layer {
 
     let data = [];
     if (!triggerChanged.getData && oldLayerData && oldLayerData.data) {
+      console.log('same data');
       // same data
       data = oldLayerData.data;
     } else {
+      console.log('calculateDataAttribute');
       data = this.calculateDataAttribute(layerDataset, getPosition);
     }
     return {data, triggerChanged};
@@ -915,6 +917,7 @@ class Layer {
    */
   updateLayerDomain(datasets, newFilter) {
     const table = this.getDataset(datasets);
+    console.log('table', table);
     if (!table) {
       return this;
     }
@@ -1025,6 +1028,7 @@ class Layer {
   }
 
   calculateLayerDomain(dataset, visualChannel) {
+    console.log('calculateLayerDomain', dataset, visualChannel, this.config);
     const {scale} = visualChannel;
     const scaleType = this.config[scale];
 
@@ -1033,7 +1037,11 @@ class Layer {
       // if colorField or sizeField were set back to null
       return defaultDomain;
     }
-
+    // const matchingFiled = dataset.fields.find(f => f.id === field.id);
+    // if (!matchingFiled) {
+    //   return defaultDomain;
+    // }
+    // return defaultDomain;
     return dataset.getColumnLayerDomain(field, scaleType) || defaultDomain;
   }
 

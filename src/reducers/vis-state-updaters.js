@@ -1328,6 +1328,7 @@ export const updateVisDataUpdater = (state, action) => {
     }),
     {}
   );
+  console.log('newDataEntries', newDataEntries);
 
   const dataEmpty = Object.keys(newDataEntries).length < 1;
 
@@ -1345,6 +1346,8 @@ export const updateVisDataUpdater = (state, action) => {
       ...newDataEntries
     }
   };
+
+  console.log('mergedState', mergedState);
 
   // merge state with config to be merged
   for (const merger of mergedState.mergers) {
@@ -1385,6 +1388,7 @@ export const updateVisDataUpdater = (state, action) => {
     }
   });
 
+  console.log('dataEmpty', dataEmpty);
   let updatedState = updateAllLayerDomainData(
     mergedState,
     dataEmpty ? Object.keys(mergedState.datasets) : Object.keys(newDataEntries),
@@ -1745,6 +1749,7 @@ export function updateFileLoadingProgressUpdater(state, {fileName, progress}) {
  * @type {typeof import('./vis-state-updaters').updateAllLayerDomainData}
  */
 export function updateAllLayerDomainData(state, dataId, updatedFilter) {
+  console.log('updateAllLayerDomainData', state, dataId, updatedFilter);
   const dataIds = typeof dataId === 'string' ? [dataId] : dataId;
   const newLayers = [];
   const newLayerData = [];
@@ -1752,6 +1757,8 @@ export function updateAllLayerDomainData(state, dataId, updatedFilter) {
   state.layers.forEach((oldLayer, i) => {
     if (oldLayer.config.dataId && dataIds.includes(oldLayer.config.dataId)) {
       // No need to recalculate layer domain if filter has fixed domain
+      console.log('updatedFilter.fixedDomain', updatedFilter && updatedFilter.fixedDomain);
+      console.log('state.datasets', state.datasets);
       const newLayer =
         updatedFilter && updatedFilter.fixedDomain
           ? oldLayer
