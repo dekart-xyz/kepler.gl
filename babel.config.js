@@ -47,7 +47,7 @@ const PLUGINS = [
       rules: [
         {
           search: '__PACKAGE_VERSION__',
-          replace: KeplerPackage.version
+          replace: KeplerPackage.mapExportVersion
         }
       ]
     }

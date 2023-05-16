@@ -2,6 +2,7 @@
   "name": "@dekart-xyz/kepler.gl",
   "author": "Shan He <shan@uber.com>",
   "version": "2.5.5-fix.1",
+  "mapExportVersion": "2.5.5",
   "description": "Fork of kepler.gl with performance improvements used in dekart.xyz ",
   "license": "MIT",
   "main": "dist/index.js",

@@ -33,7 +33,7 @@ module.exports = function babel(api) {
         rules: [
           {
             search: '__PACKAGE_VERSION__',
-            replace: KeplerPackage.version
+            replace: KeplerPackage.mapExportVersion
           }
         ]
       }

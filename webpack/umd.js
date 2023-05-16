@@ -98,7 +98,7 @@ const LIBRARY_BUNDLE_CONFIG = env => ({
                 rules: [
                   {
                     search: '__PACKAGE_VERSION__',
-                    replace: KeplerPackage.version
+                    replace: KeplerPackage.mapExportVersion
                   }
                 ]
               }
