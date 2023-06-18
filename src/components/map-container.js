@@ -332,7 +332,7 @@ export default function MapContainerFactory(MapPopover, MapControl, Editor) {
       if (pinned || clicked) {
         // project lnglat to screen so that tooltip follows the object on zoom
         const viewport = new WebMercatorViewport(mapState);
-        const lngLat = clicked ? clicked.lngLat : pinned.coordinate;
+        const lngLat = clicked ? clicked.coordinate : pinned.coordinate;
         pinnedPosition = this._getHoverXY(viewport, lngLat);
         layerPinnedProp = getLayerHoverProp({
           interactionConfig,

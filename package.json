@@ -246,12 +246,6 @@
     "webpack-stats-plugin": "^0.2.1"
   },
   "resolutions": {
-    "@loaders.gl/core": "^2.3.3",
-    "@loaders.gl/csv": "^2.3.3",
-    "@loaders.gl/gltf": "^2.3.3",
-    "@loaders.gl/json": "^2.3.3",
-    "@loaders.gl/loader-utils": "^2.3.3",
-    "@loaders.gl/polyfills": "^2.3.3",
     "d3-scale": "^3.2.3",
     "dot-prop": "6.0.0",
     "kind-of": "6.0.3",
@@ -259,7 +253,22 @@
     "lodash": "4.17.19",
     "minimist": "1.2.3",
     "node-fetch": "2.6.1",
-    "tough-cookie": "4.0.0"
+    "tough-cookie": "4.0.0",
+    "@deck.gl/aggregation-layers": "8.6.5",
+    "@deck.gl/core": "8.6.5",
+    "@deck.gl/extensions": "8.6.5",
+    "@deck.gl/geo-layers": "8.6.5",
+    "@deck.gl/layers": "8.6.5",
+    "@deck.gl/mesh-layers": "8.6.5",
+    "@deck.gl/react": "8.6.5",
+    "deck.gl": "8.6.5",
+    "@luma.gl/shadertools": "8.5.10",
+    "@luma.gl/core": "8.5.10",
+    "@luma.gl/experimental": "8.5.10",
+    "@luma.gl/constants": "8.5.10",
+    "@luma.gl/engine": "8.5.10",
+    "@luma.gl/gltools": "8.5.10",
+    "@luma.gl/webgl": "8.5.10"
   },
   "peerDependencies": {
     "react": ">=16.3",
